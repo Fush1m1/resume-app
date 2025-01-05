@@ -1,4 +1,4 @@
-# resumeApp
+# resume-app
 
 ```
 .
