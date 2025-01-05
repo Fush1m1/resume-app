@@ -7,6 +7,11 @@
  - writing some docs, and tests.
 
 ## stack
- - figma
- - markdown based docs
- - next.js
+ - docs
+     - figma
+     - markdown based docs
+        - mermaid
+ - Next.js
+ - AWS
+     - ECR
+ - Firebase
