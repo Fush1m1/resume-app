@@ -1,6 +1,6 @@
 # resumeApp
 
-resume-app folder includes
+```
 .
 ├── README.md
 ├── docs
@@ -19,3 +19,4 @@ resume-app folder includes
     ├── public
     ├── tailwind.config.ts
     └── tsconfig.json
+```
