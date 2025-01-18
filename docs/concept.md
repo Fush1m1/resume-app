@@ -1,17 +1,8 @@
 # Concept 
-
-## aim
- - blog-like app
-
-## methodology
- - writing some docs, and tests.
-
-## stack
- - docs
-     - figma
-     - markdown based docs
-        - mermaid
- - Next.js
- - AWS
-     - ECR
- - Firebase
+ - Art investment platform 
+    - header
+    - artworks
+    - article
+    - about
+ - You can Tap the gear icon in the top right corner to navigate to My Page.
+ - Do everything in Typescript as much as possible.
