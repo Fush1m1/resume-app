@@ -1,6 +1,11 @@
 # resume-app
 
 ```
+$ npx tsc
+$ node run start
+```
+
+```
 .
 ├── README.md
 ├── client
