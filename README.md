@@ -15,25 +15,24 @@ $ npm run start
 .
 ├── README.md
 ├── client
-│   ├── README.md
 │   ├── node_modules
-│   ├── package-lock.json
 │   ├── package.json
 │   ├── public
-│   └── src
+│   ├── src
+│   ├── tsconfig.json
+│   └── yarn.lock
 ├── docs
-│   ├── api_interface.md
-│   └── concept.md
+│   ├── api_interfaces
+│   ├── concept.md
+│   └── er.md
 ├── node_modules
-│   ├── js-tokens
-│   ├── loose-envify
-│   ├── react
-│   ├── react-dom
-│   └── scheduler
-├── package-lock.json
-├── package.json
+│   ├── @types
+│   └── csstype
 └── server
+    ├── app.ts
+    ├── dist
     ├── node_modules
     ├── package-lock.json
-    └── package.json
+    ├── package.json
+    └── tsconfig.json
 ```
