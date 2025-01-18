@@ -3,20 +3,26 @@
 ```
 .
 ├── README.md
+├── client
+│   ├── README.md
+│   ├── node_modules
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── public
+│   └── src
 ├── docs
 │   ├── api_interface.md
 │   └── concept.md
-└── resume-app
-    ├── README.md
-    ├── app
-    ├── eslint.config.mjs
-    ├── next-env.d.ts
-    ├── next.config.ts
+├── node_modules
+│   ├── js-tokens
+│   ├── loose-envify
+│   ├── react
+│   ├── react-dom
+│   └── scheduler
+├── package-lock.json
+├── package.json
+└── server
     ├── node_modules
     ├── package-lock.json
-    ├── package.json
-    ├── postcss.config.mjs
-    ├── public
-    ├── tailwind.config.ts
-    └── tsconfig.json
+    └── package.json
 ```
