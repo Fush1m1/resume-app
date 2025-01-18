@@ -2,7 +2,7 @@
 
 ```
 $ cd client
-$ npm ci
+$ yarn
 $ npm start
 
 $ cd server
