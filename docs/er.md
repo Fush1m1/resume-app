@@ -4,10 +4,10 @@ erDiagram
     bigint id PK
     string name
     string email
-    
-    string avatar_url
-    timestamp created_at
-    timestamp deleted_at
+    timestamp createdAt
+    timestamp deletedAt
+    boolean isAdmin
+    boolean isArtist
   }
 
   artworks {
