@@ -2,11 +2,11 @@
 
 ```
 $ cd client
-$ npx create-react-app my-app --template typescript
+$ npm ci
+$ npm start
 
 $ cd server
-$ npm install express
-
+$ npm ci
 $ npx tsc
 $ npm run start
 ```
