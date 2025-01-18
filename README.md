@@ -1,12 +1,14 @@
 # resume-app
 
 ```
-$ npx create-react-app client
+$ cd client
+$ npx create-react-app my-app --template typescript
+
 $ cd server
 $ npm install express
 
 $ npx tsc
-$ node run start
+$ npm run start
 ```
 
 ```
