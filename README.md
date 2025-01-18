@@ -1,6 +1,12 @@
 # resume-app
 
 ```
+$ cd server
+$ npm install express
+
+$ cd client
+$ npm npx create-react-app client
+
 $ npx tsc
 $ node run start
 ```
