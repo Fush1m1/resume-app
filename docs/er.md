@@ -12,7 +12,9 @@ erDiagram
 
   artworks {
     bigint id PK
-    bigint auther_id 
+    bigint auther_id FK
     string name
   }
+
+  users ||--o| artworks: "creates"
 ```
