@@ -35,7 +35,7 @@ env:
   ECR_REPOSITORY: resume-app
   ECS_SERVICE: myService
   ECS_CLUSTER: DevCluster
-  ECS_TASK_DEFINITION: .
+  ECS_TASK_DEFINITION: "./task_definition.json"
   CONTAINER_NAME: myContainer
 
 permissions:
