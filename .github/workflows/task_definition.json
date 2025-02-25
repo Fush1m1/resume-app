@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:659281338372:task-definition/myTaskDefinition:2",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:659281338372:task-definition/myTaskDefinition:3",
     "containerDefinitions": [
         {
             "name": "myContainer",
@@ -36,10 +36,10 @@
         }
     ],
     "family": "myTaskDefinition",
-    "taskRoleArn": "arn:aws:iam::659281338372:role/ecsTaskExecutionRole",
-    "executionRoleArn": "arn:aws:iam::659281338372:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::659281338372:role/MyECSTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::659281338372:role/MyECSTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -88,7 +88,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-02-02T09:33:17.201Z",
+    "registeredAt": "2025-02-25T14:06:01.329Z",
     "registeredBy": "arn:aws:iam::659281338372:root",
     "enableFaultInjection": false,
     "tags": []
