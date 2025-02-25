@@ -11,6 +11,6 @@
     - Extremely high agility
 
 # Details
- - You can Tap the gear icon in the top right corner to navigate to My Page.
+ - Full Discord Clone
 
     
