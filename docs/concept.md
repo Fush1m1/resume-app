@@ -10,7 +10,7 @@
     - Schema free
     - Extremely high agility
 
-# Details
+# UI
  - Full Discord Clone
 
     
