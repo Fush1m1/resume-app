@@ -1,11 +1,26 @@
-import express from 'express'
-const app = express()
-const port = 3000
+import express from 'express';
+import { dbStatusMessage } from './repository/db';
 
+// アプリケーションの初期化
+const app = express();
+const port = 3000;
+
+// DBヘルスチェック
+let statusMessage: string = '';
+dbStatusMessage()
+  .then(message => {
+    statusMessage = message;
+  })
+  .catch(console.error);
+
+// ルートハンドラー
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  // DBヘルスチェックの結果を返す
+  res.send(statusMessage);
+  console.log(statusMessage);
+});
 
+// サーバーの起動
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});
