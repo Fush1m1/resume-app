@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { dbStatusMessage } from './repository/db';
 
 // アプリケーションの初期化
@@ -24,3 +25,8 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+// CORS設定
+app.use(cors({
+  origin: 'https://resume-app-client-czwndnsiq-fush1m1s-projects.vercel.app',
+}));
