@@ -32,7 +32,7 @@ on:
 
 env:
   AWS_REGION: ap-northeast-1
-  ECR_REPOSITORY: resume-app
+  ECR_REPOSITORY: my-ecr
   ECS_SERVICE: MyService
   ECS_CLUSTER: DevCluster
   ECS_TASK_DEFINITION: .github/workflows/task_definition.json
