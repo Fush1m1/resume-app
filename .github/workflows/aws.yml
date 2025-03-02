@@ -33,7 +33,7 @@ on:
 env:
   AWS_REGION: ap-northeast-1
   ECR_REPOSITORY: resume-app
-  ECS_SERVICE: MyServiceALB
+  ECS_SERVICE: myService
   ECS_CLUSTER: DevCluster
   ECS_TASK_DEFINITION: .github/workflows/task_definition.json
   CONTAINER_NAME: myContainer
