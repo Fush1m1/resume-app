@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:659281338372:task-definition/myTaskDefinition:3",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:659281338372:task-definition/myTaskDefinition:22",
     "containerDefinitions": [
         {
             "name": "myContainer",
-            "image": "659281338372.dkr.ecr.ap-northeast-1.amazonaws.com/resume-app",
+            "image": "659281338372.dkr.ecr.ap-northeast-1.amazonaws.com/my-ecr",
             "cpu": 0,
             "portMappings": [
                 {
@@ -23,7 +23,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/myTaskDefinition",
+                    "awslogs-group": "/ecs/",
                     "mode": "non-blocking",
                     "awslogs-create-group": "true",
                     "max-buffer-size": "25m",
@@ -36,10 +36,10 @@
         }
     ],
     "family": "myTaskDefinition",
-    "taskRoleArn": "arn:aws:iam::659281338372:role/MyECSTaskExecutionRole",
-    "executionRoleArn": "arn:aws:iam::659281338372:role/MyECSTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::659281338372:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::659281338372:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 3,
+    "revision": 22,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -88,7 +88,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-02-25T14:06:01.329Z",
+    "registeredAt": "2025-03-02T09:34:33.519Z",
     "registeredBy": "arn:aws:iam::659281338372:root",
     "tags": []
 }
