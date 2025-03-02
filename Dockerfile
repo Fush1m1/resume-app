@@ -10,6 +10,9 @@ COPY package*.json ./
 # 依存関係をインストール
 RUN npm install
 
+# distを作成
+RUN npm run build
+
 # アプリケーションのソースコードをコピー
 COPY . .
 
