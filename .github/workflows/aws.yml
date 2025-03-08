@@ -32,11 +32,11 @@ on:
 
 env:
   AWS_REGION: ap-northeast-1
-  ECR_REPOSITORY: my-ecr
-  ECS_SERVICE: MyService
-  ECS_CLUSTER: DevCluster
+  ECR_REPOSITORY: my-repo1232
+  ECS_SERVICE: my-service1237
+  ECS_CLUSTER: MyDevCluster1234
   ECS_TASK_DEFINITION: .github/workflows/task_definition.json
-  CONTAINER_NAME: myContainer
+  CONTAINER_NAME: my-repo1232
 
 permissions:
   contents: read
