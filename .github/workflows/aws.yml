@@ -36,7 +36,7 @@ env:
   ECS_SERVICE: MyService
   ECS_CLUSTER: DevCluster-hrti
   ECS_TASK_DEFINITION: .github/workflows/task_definition.json
-  CONTAINER_NAME: myrepo-trtrtr
+  CONTAINER_NAME: my-container-pptj
 
 permissions:
   contents: read
