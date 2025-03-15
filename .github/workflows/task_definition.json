@@ -2,8 +2,8 @@
   "family": "TaskDefinitin1234",
   "containerDefinitions": [
     {
-      "name": "my-repo1232",
-      "image": "659281338372.dkr.ecr.ap-northeast-1.amazonaws.com/myrepo",
+      "name": "myrepo-trtrtr",
+      "image": "659281338372.dkr.ecr.ap-northeast-1.amazonaws.com/myrepo-trtrtr",
       "cpu": 0,
       "portMappings": [
         {
