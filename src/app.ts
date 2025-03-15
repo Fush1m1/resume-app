@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import { dbStatusMessage } from './repository/db';
 
 // アプリケーションの初期化
 const app = express();
@@ -8,11 +7,11 @@ const port = 3000;
 
 // DBヘルスチェック
 let statusMessage: string = '';
-dbStatusMessage()
-  .then(message => {
-    statusMessage = message;
-  })
-  .catch(console.error);
+// dbStatusMessage()
+//   .then(message => {
+//     statusMessage = message;
+//   })
+//   .catch(console.error);
 
 // ルートハンドラー
 app.get('/', (req, res) => {
@@ -28,5 +27,6 @@ app.listen(port, () => {
 
 // CORS設定
 app.use(cors({
+  // FIXME: .envファイルに移動
   origin: 'https://resume-app-client-czwndnsiq-fush1m1s-projects.vercel.app',
 }));
