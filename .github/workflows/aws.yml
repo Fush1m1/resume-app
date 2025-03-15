@@ -33,7 +33,7 @@ on:
 env:
   AWS_REGION: ap-northeast-1
   ECR_REPOSITORY: myrepo
-  ECS_SERVICE: my-fargate-service
+  ECS_SERVICE: my-fargate-service-ehrihort
   ECS_CLUSTER: my-fargate-cluster
   ECS_TASK_DEFINITION: .github/workflows/task_definition.json
   CONTAINER_NAME: myrepo
