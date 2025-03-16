@@ -11,10 +11,12 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 
-// Use CORS middleware
 app.use(cors({
-  origin: ['https://resume-app-client.vercel.app/', 'http://localhost:3000/']
+  origin: ['https://resume-app-client.vercel.app', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 // Connect to the database
 let statusMessage: string = '';
