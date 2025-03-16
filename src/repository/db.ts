@@ -28,7 +28,6 @@ async function runDB() {
     //  and specify the read preference as secondary preferred
 
     var client = MongoClient.connect(
-    // 'mongodb://dbConnectUser:Opt9BULgb%3CceTLfI%239pTL%23E%28O.Z%5D@sample-cluster.node.us-east-1.docdb.amazonaws.com:27017/sample-database?tls=true&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false',
     uri,
     {
     tlsCAFile: `global-bundle.pem` //Specify the DocDB; cert
