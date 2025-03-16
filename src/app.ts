@@ -1,6 +1,6 @@
 'use strict';
 
-const express = require('express');
+import express from 'express';  // Import the Express module
 import cors from 'cors';  // Import the CORS module
 import { dbStatusMessage } from './repository/db';
 
@@ -16,7 +16,6 @@ app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
 
 // Connect to the database
 let statusMessage: string = '';
