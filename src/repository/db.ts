@@ -1,19 +1,19 @@
 import dotenv from 'dotenv';
+import { MongoClient } from 'mongodb';
 
 dotenv.config();
-const uri:string = process.env.MONGODB_URI || '';
-const MongoClient = require('mongodb').MongoClient
+const uri: string = process.env.MONGODB_URI || '';
 
 /*
  * Connect to the database and return a status message
  * @returns {Promise<string>} A status message
  */
 export async function dbStatusMessage(): Promise<string> {
-    var statusMessage: string = "connecting to the database...";
+    let statusMessage: string = "connecting to the database...";
     try {
         await runDB();
     } catch (error) {
-        statusMessage = "Database connection failed:", error;
+        statusMessage = `Database connection failed: ${error}`;
         return statusMessage;
     }
     statusMessage = "Connected to the database!";
@@ -26,32 +26,28 @@ export async function dbStatusMessage(): Promise<string> {
 async function runDB() {
     //Create a MongoDB client, open a connection to DocDB; as a replica set,
     //  and specify the read preference as secondary preferred
+    const client = new MongoClient(uri, { tlsCAFile: `global-bundle.pem` });
+    try {
+        await client.connect();
+        console.log('Connected to the database');
 
-    var client = MongoClient.connect(
-    uri,
-    {
-    tlsCAFile: `global-bundle.pem` //Specify the DocDB; cert
-    },
-    function(err, client) {
-        if(err)
-            throw err;
+        // Specify the database to be used
+        const db = client.db('sample-database');
 
-        //Specify the database to be used
-        var db = client.db('sample-database');
+        // Specify the collection to be used
+        const col = db.collection('sample-collection');
 
-        //Specify the collection to be used
-        var col = db.collection('sample-collection');
+        // Insert a single document
+        await col.insertOne({ 'hello': 'Amazon DocumentDB' });
 
-        //Insert a single document
-        col.insertOne({'hello':'Amazon DocumentDB'}, function(err, result){
-            //Find the document that was previously written
-            col.findOne({'hello':'Amazon DocumentDB'}, function(err, result){
-                //Print the result to the screen
-                console.log(result);
-
-                //Close the connection
-                client.close()
-            });
-        });
-    });
+        // Find the document that was previously written
+        const result = await col.findOne({ 'hello': 'Amazon DocumentDB' });
+        console.log(result);
+    } catch (err) {
+        console.error('Connection failed', err);
+        throw err;
+    } finally {
+        // Close the connection
+        await client.close();
+    }
 }
