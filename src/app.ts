@@ -13,7 +13,7 @@ const app = express();
 
 // Use CORS middleware
 app.use(cors({
-  origin: 'https://resume-app-client-czwndnsiq-fush1m1s-projects.vercel.app/',  // Allow only this origin
+  origin: ['https://resume-app-client.vercel.app/', 'http://localhost:3000/']
 }));
 
 // Connect to the database
