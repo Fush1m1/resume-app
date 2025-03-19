@@ -12,7 +12,7 @@ const HOST = '0.0.0.0';
 const app = express();
 
 app.use(cors({
-  origin: ['https://resume-app-client.vercel.app', 'http://localhost:3000'],
+  origin: ['https://resume-app-client.vercel.app', 'http://localhost:3000', 'https://fush1m1resume.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
