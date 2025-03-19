@@ -1,3 +1,7 @@
+// read .env file
+import dotenv from 'dotenv';
+dotenv.config();
+
 /*
  * Connect to the database and return a status message
  * @returns {Promise<string>} A status message
@@ -23,7 +27,7 @@ function runDB() {
     AWS.config.update({ region: 'ap-northeast-1' });
     const dynamodb = new AWS.DynamoDB.DocumentClient();
     const params = {
-        TableName: 'MyFirstDynamoDB'
+        TableName: process.env.TABLE_NAME
     };
     dynamodb.scan(params, function (err, data) {
         if (err) {
