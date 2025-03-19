@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:659281338372:task-definition/myTDF-hrit:2",
+    "taskDefinitionArn": "arn:aws:ecs:ap-northeast-1:659281338372:task-definition/myTDF-hrit:16",
     "containerDefinitions": [
         {
             "name": "my-container-0316",
-            "image": "659281338372.dkr.ecr.ap-northeast-1.amazonaws.com/myrepo-trtrtr",
+            "image": "659281338372.dkr.ecr.ap-northeast-1.amazonaws.com/myrepo-trtrtr:b79d2336655511ef8d6a1f25781c99633f58fa6b",
             "cpu": 0,
             "portMappings": [
                 {
@@ -27,15 +27,17 @@
                     "max-buffer-size": "25m",
                     "awslogs-region": "ap-northeast-1",
                     "awslogs-stream-prefix": "ecs"
-                }
+                },
+                "secretOptions": []
             },
             "systemControls": []
         }
     ],
     "family": "myTDF-hrit",
+    "taskRoleArn": "arn:aws:iam::659281338372:role/MyDynamoDBFullAcceessRole",
     "executionRoleArn": "arn:aws:iam::659281338372:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 16,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -53,6 +55,9 @@
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
@@ -78,10 +83,10 @@
     "cpu": "1024",
     "memory": "3072",
     "runtimePlatform": {
-        "cpuArchitecture": "ARM64",
+        "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-03-16T03:47:48.436Z",
+    "registeredAt": "2025-03-19T07:00:04.915Z",
     "registeredBy": "arn:aws:iam::659281338372:root",
     "tags": []
 }

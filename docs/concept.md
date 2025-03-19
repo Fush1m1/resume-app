@@ -8,7 +8,7 @@
 # Stack
  - Express.js
     - Do everything in Typescript as much as possible.
- - Firebase Firestore
+ - DynamoDB
     - Provides an artistic application that handles artworks.
     - Schema free
     - Extremely high agility
