@@ -11,8 +11,12 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 
+// read .env file
+import dotenv from 'dotenv';
+dotenv.config();
+
 app.use(cors({
-  origin: ['https://resume-app-client.vercel.app', 'http://localhost:3000', 'https://fush1m1resume.com'],
+  origin: process.env.ORIGIN,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
