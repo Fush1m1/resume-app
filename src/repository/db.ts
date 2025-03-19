@@ -9,14 +9,14 @@ dotenv.config();
  * @returns {Promise<string>} A status message
  */
 export async function dbStatusMessage(): Promise<string> {
-    let statusMessage: string = "connecting to the database...";
-    try {
-        // await runDB();
-    } catch (error) {
-        statusMessage = `Database connection failed: ${error}`;
-        return statusMessage;
-    }
-    statusMessage = "Connected to the database!";
+    const statusMessage: string = "connecting to the database...";
+    // try {
+    //     await runDB();
+    // } catch (error) {
+    //     statusMessage = `Database connection failed: ${error}`;
+    //     return statusMessage;
+    // }
+    // statusMessage = "Connected to the database!";
     return statusMessage;
 }
 
