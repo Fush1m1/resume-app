@@ -25,7 +25,7 @@ dbStatusMessage().then((value) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello World!' + '___' + statusMessage);
+  res.send('Hello World! from backend. DB status: ' + statusMessage);
 });
 
 app.listen(PORT, HOST);
