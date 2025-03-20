@@ -6,7 +6,7 @@ import { dbStatusMessage, deleteDBContent, getDBContent, updateDBContent } from 
 
 // Constants
 const PORT = 8080;
-const HOST = '0.0.0.0';
+const HOST = process.env.HOST;
 
 // App
 const app = express();
