@@ -68,7 +68,7 @@ function runDB () {
 function readDynamoDB (): Promise<Res> {
     const dynamodb = new AWS.DynamoDB.DocumentClient();
     const params = {
-        TableName: process.env.TABLE_NAME
+        TableName: 'MyFirstDynamoDB',
     };
 
     const resData: Res = { Items: [] };
@@ -91,7 +91,7 @@ function readDynamoDB (): Promise<Res> {
 function updateDynamoDBItem (key: string, message: string): void {
     const dynamodb = new AWS.DynamoDB.DocumentClient();
     const params = {
-        TableName: process.env.TABLE_NAME,
+        TableName: 'MyFirstDynamoDB',
         Item: {
             'hoge': key,
             'message': message
@@ -109,7 +109,7 @@ function updateDynamoDBItem (key: string, message: string): void {
 function deleteDynamoDBItem (key: string): void {
     const dynamodb = new AWS.DynamoDB.DocumentClient();
     const params = {
-        TableName: process.env.TABLE_NAME,
+        TableName: 'MyFirstDynamoDB',
         Key: {
             'hoge': key,
         }
