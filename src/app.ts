@@ -2,7 +2,7 @@
 
 import express from 'express';  // Import the Express module
 import cors from 'cors';  // Import the CORS module
-import { dbStatusMessage } from './repository/db';
+import { dbStatusMessage, deleteDBContent, getDBContent, updateDBContent } from './repository/db';
 
 // Constants
 const PORT = 8080;
@@ -16,7 +16,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 app.use(cors({
-  origin: process.env.ORIGIN,
+  origin: [process.env.ORIGIN1, process.env.ORIGIN2, process.env.ORIGIN3],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -30,6 +30,31 @@ dbStatusMessage().then((value) => {
 
 app.get('/', (req, res) => {
   res.send('Hello World! from backend. DB status: ' + statusMessage);
+});
+
+app.get('/getDBContent', (req, res) => {
+  let dbContent: string[] = [];
+  getDBContent().then((value) => {
+    dbContent = value.Items;
+    console.log(dbContent);
+    res.send('DB content:' + dbContent);
+  });
+});
+
+app.post('/updateDBContent/hoge', (req, res) => {
+  let dbContent: string[] = [];
+  updateDBContent('fuga').then((value) => {
+    dbContent = value.Items;
+    res.send('DB content:' + dbContent);
+  });
+});
+
+app.delete('/deleteDBContent/hoge', (req, res) => {
+  let dbContent: string[] = [];
+  deleteDBContent('message').then((value) => {
+    dbContent = value.Items;
+    res.send('DB content:' + dbContent);
+  });
 });
 
 app.listen(PORT, HOST);
