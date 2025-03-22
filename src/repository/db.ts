@@ -5,6 +5,7 @@ import { Res } from '../dto/myFirstDto';
 import dotenv from 'dotenv';
 dotenv.config();
 AWS.config.update({ region: 'ap-northeast-1' });
+const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 /*
  * Connect to the database and return a status message
@@ -53,8 +54,6 @@ export async function deleteDBContent (key: string): Promise<Res> {
  * Run the DynamoDB connection
  */
 function runDB () {
-    AWS.config.update({ region: 'ap-northeast-1' });
-    const dynamodb = new AWS.DynamoDB.DocumentClient();
     const params = {
         TableName: process.env.TABLE_NAME
     };
