@@ -5,6 +5,7 @@ import { Res } from '../dto/myFirstDto';
 import dotenv from 'dotenv';
 dotenv.config();
 AWS.config.update({ region: 'ap-northeast-1' });
+const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 /*
  * Connect to the database and return a status message
@@ -53,8 +54,6 @@ export async function deleteDBContent (key: string): Promise<Res> {
  * Run the DynamoDB connection
  */
 function runDB () {
-    AWS.config.update({ region: 'ap-northeast-1' });
-    const dynamodb = new AWS.DynamoDB.DocumentClient();
     const params = {
         TableName: process.env.TABLE_NAME
     };
@@ -68,7 +67,7 @@ function runDB () {
 function readDynamoDB (): Promise<Res> {
     const dynamodb = new AWS.DynamoDB.DocumentClient();
     const params = {
-        TableName: 'MyFirstDynamoDB',
+        TableName: process.env.TABLE_NAME
     };
 
     const resData: Res = { Items: [] };
@@ -91,7 +90,7 @@ function readDynamoDB (): Promise<Res> {
 function updateDynamoDBItem (key: string, message: string): void {
     const dynamodb = new AWS.DynamoDB.DocumentClient();
     const params = {
-        TableName: 'MyFirstDynamoDB',
+        TableName: process.env.TABLE_NAME,
         Item: {
             'hoge': key,
             'message': message
@@ -109,7 +108,7 @@ function updateDynamoDBItem (key: string, message: string): void {
 function deleteDynamoDBItem (key: string): void {
     const dynamodb = new AWS.DynamoDB.DocumentClient();
     const params = {
-        TableName: 'MyFirstDynamoDB',
+        TableName: process.env.TABLE_NAME,
         Key: {
             'hoge': key,
         }
